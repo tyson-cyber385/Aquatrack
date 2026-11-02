@@ -1,0 +1,87 @@
+/* AquaTrack - front page styles for index.php
+   Save as: aquatrack/assets/css/login.css (front page + login page) */
+:root{--brand:#3b4ef8;--ink:#0b1030;--muted:#6b7394}
+*{box-sizing:border-box}
+body.front-body{margin:0;font-family:'Poppins',sans-serif;color:var(--ink);background:#fff}
+i.eva{display:inline-flex;vertical-align:middle;font-size:1.2em}
+
+.front-hero{display:flex;min-height:100vh}
+
+/* left: logo panel */
+.front-left{flex:1;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:#fff;
+  background:linear-gradient(160deg,#2b39dc 0%,#3a6ff2 55%,#5dd3ee 100%)}
+.front-left::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;pointer-events:none;background:
+  radial-gradient(120% 60% at 20% 100%,rgba(255,255,255,.18) 49%,transparent 50%),
+  radial-gradient(120% 70% at 80% 110%,rgba(255,255,255,.16) 49%,transparent 50%),
+  radial-gradient(150% 55% at 50% 125%,rgba(255,255,255,.18) 49%,transparent 50%)}
+.front-logo{position:relative;z-index:2;box-sizing:content-box;width:150px;height:150px;padding:34px;object-fit:contain;background:#fff;border-radius:48px;box-shadow:0 24px 50px rgba(10,20,120,.35)}
+.front-station{position:relative;z-index:2;font-size:2.4rem;font-weight:700;margin:.5rem 0 0}
+.front-tagline{position:relative;z-index:2;font-weight:500;margin:.3rem 0 0;opacity:.95}
+
+/* right: details */
+.front-right{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:3rem clamp(2rem,7vw,6rem);max-width:760px}
+.front-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;line-height:1.25;margin:0 0 1rem;color:var(--ink)}
+.front-desc{color:var(--muted);line-height:1.8;max-width:480px;margin:0 0 2rem}
+.btn-aqua{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;text-decoration:none;font-weight:600;padding:.9rem 2rem;border-radius:14px;box-shadow:0 10px 24px rgba(59,78,248,.3);transition:transform .15s,background .15s}
+.btn-aqua:hover{background:#2c3de0;transform:translateY(-2px);color:#fff}
+.front-foot{margin-top:3rem;font-size:12px;color:var(--muted)}
+
+@media(max-width:767px){
+  .front-hero{flex-direction:column}
+  .front-left{flex:none;min-height:42vh}
+  .front-logo{width:90px;height:90px;padding:24px;border-radius:34px}
+  .front-station{font-size:1.8rem}
+  .front-right{max-width:none;align-items:center;text-align:center;padding:2rem 1.5rem}
+}
+
+
+/* =========================================================
+   LOGIN PAGE (login.php)
+   Includes the few Bootstrap-style classes login.php uses,
+   so Bootstrap does not need to be loaded.
+   ========================================================= */
+body.login-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem;font-family:'Poppins',sans-serif;color:var(--ink);position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#2b39dc 0%,#3a6ff2 55%,#5dd3ee 100%)}
+body.login-body::before{content:"";position:fixed;left:0;right:0;bottom:0;height:50%;pointer-events:none;background:
+  radial-gradient(120% 60% at 20% 100%,rgba(255,255,255,.18) 49%,transparent 50%),
+  radial-gradient(120% 70% at 80% 110%,rgba(255,255,255,.16) 49%,transparent 50%),
+  radial-gradient(150% 55% at 50% 125%,rgba(255,255,255,.18) 49%,transparent 50%)}
+
+.login-card{position:relative;z-index:1;width:100%;max-width:430px;background:#fff;border-radius:24px;padding:2.2rem 2rem 1.6rem;box-shadow:0 30px 70px rgba(10,20,110,.35)}
+.login-head{text-align:center;margin-bottom:1.4rem}
+.login-logo{width:84px;height:84px;object-fit:contain}
+.login-title{font-size:1.8rem;font-weight:700;margin:.4rem 0 .2rem}
+.login-sub{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+
+.role-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#f1f2f8;padding:4px;border-radius:14px;margin-bottom:1.3rem}
+.role-tab{border:0;background:none;font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);padding:.6rem .3rem;border-radius:10px;display:flex;align-items:center;justify-content:center;gap:.35rem;cursor:pointer;transition:.15s}
+.role-tab:hover{color:var(--brand)}
+.role-tab.active{background:#fff;color:var(--brand);box-shadow:0 2px 8px rgba(30,40,120,.14)}
+
+.form-label{display:block;font-size:14px;font-weight:500;margin-bottom:.35rem}
+.input-wrap{position:relative}
+.input-wrap>i.eva{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none}
+.form-control{width:100%;font-family:inherit;font-size:14px;padding:.75rem 3rem .75rem 2.7rem;border:1px solid #e3e5ef;border-radius:12px;background:#fff;color:var(--ink);outline:0;transition:.15s}
+.form-control::placeholder{color:#a3a9c4}
+.form-control:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(59,78,248,.14)}
+.toggle-pass{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);width:36px;height:36px;border-radius:10px;cursor:pointer;display:grid;place-items:center}
+.toggle-pass:hover{background:#f1f2f8;color:var(--brand)}
+
+.login-card .btn-aqua{border:0;cursor:pointer;justify-content:center;font-family:inherit;font-size:15px}
+.login-foot{text-align:center;margin-top:1.3rem;padding-top:1rem;border-top:1px solid #eceef5}
+.link-muted{color:var(--muted);text-decoration:none}
+.link-muted:hover{color:var(--brand)}
+.login-card input[type=checkbox]{accent-color:var(--brand);margin-right:.35rem}
+
+.alert{padding:.6rem .9rem;border-radius:12px;margin-bottom:1rem}
+.alert-danger{background:#fee2e2;color:#b91c1c;border:1px solid #fecaca}
+
+/* Bootstrap-style utilities used by login.php */
+.small{font-size:13px}
+.w-100{width:100%}
+.mt-3{margin-top:1rem}
+.py-2{padding-top:.5rem;padding-bottom:.5rem}
+.text-end{text-align:right}
+.row{display:flex;flex-wrap:wrap}
+.col-6{width:50%}
+.align-items-center{align-items:center}
